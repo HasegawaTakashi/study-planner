@@ -17,7 +17,7 @@ class CreateMemosTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('tag_id')->unsigned();
+            $table->integer('tag_id')->unsigned()->nullable();
             $table->foreign('tag_id')->references('id')->on('tags');
 
             $table->string('title');
